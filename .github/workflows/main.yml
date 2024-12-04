@@ -3,7 +3,7 @@ name: Check WSL Status
   - push
 jobs:
   check-wsl-status:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2
