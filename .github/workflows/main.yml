@@ -1,0 +1,12 @@
+name: Check WSL Status
+'on':
+  - push
+jobs:
+  check-wsl-status:
+    runs-on: self-hosted
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Check WSL Status
+        run: |
+          wsl -l -v
