@@ -9,4 +9,4 @@ jobs:
         uses: actions/checkout@v2
       - name: Check WSL Status
         run: |
-          wsl -l -v
+          df -kh
