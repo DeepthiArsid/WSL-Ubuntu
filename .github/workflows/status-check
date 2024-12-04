@@ -1,0 +1,17 @@
+name: Execute SSH Command
+'on':
+  - push
+jobs:
+  ssh-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: '${{ secrets.SSH_PRIVATE_KEY }}'
+      - name: Execute SSH Commands
+        run: >
+          ssh -o StrictHostKeyChecking=no darsid@192.168.129.102 'df -kh &&
+          whoami'
