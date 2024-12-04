@@ -10,3 +10,6 @@ jobs:
       - name: Check WSL Status
         run: |
           df -kh
+      - name: user
+        run : |
+          whoami
